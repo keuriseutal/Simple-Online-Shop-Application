@@ -1,0 +1,91 @@
+
+/*#region image-display */
+.card {
+    font-family: Noto Sans, sans-serif;
+    width: 800px;
+    height: 500px;
+    
+    top: 15%;
+    left: 0.5%;
+    background-color:whitesmoke;
+    
+    overflow-x: hidden;
+    padding-top: 20px;
+    vertical-align: middle;
+}
+
+img{
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    width: 800px;
+    height: 500px;
+    left: 1.5%;
+}
+/*#endregion*/
+
+/*#region product form*/
+.order-form {
+    font-family: Noto Sans, sans-serif;
+    position: fixed;
+    padding-top: 20px;
+    padding-left: 50px;
+    word-wrap: break-word;
+  }
+
+#price{
+    color: rgb(4, 99, 51);
+}
+
+#range{
+    font-size: 30px;
+    font-weight: bold;
+    height: 80px;
+    width: 150px;
+}
+
+.material-icons.md-80 {
+    font-size: 80px;
+    vertical-align: middle;
+  }
+  .material-icons.md-dark {
+    color: rgb(4, 99, 51);
+  }
+
+  .material-icons.cart:hover{
+    color: black;   
+    cursor: pointer;
+}
+
+/*#endregion*/
+
+
+.btn-default{
+    background-color:rgb(4, 99, 51);
+    color: white;
+  }
+  .btn-default:hover{
+    background-color:black;
+  }
+  
+  .btn-default#back{
+    float: right;
+  }
+  textarea
+{
+    overflow-y:scroll;
+}
+
+
+/*#region product details */
+.product-details{
+    font-family: Noto Sans, sans-serif;
+    padding-top: 550px;
+    padding-left: 50px;
+    word-wrap: break-word;
+}
+
+hr{
+    color: black;
+}
+/*#endregion*/

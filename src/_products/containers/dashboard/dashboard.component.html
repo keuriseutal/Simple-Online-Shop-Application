@@ -1,0 +1,32 @@
+<navbar-viewer
+(searchInput)="onSearchInput($event)"
+(logOut)="setAsLoggedOut($event)"></navbar-viewer>
+@Output() selectedProduct = new EventEmitter();
+@Output() selectedProductQuantity = new EventEmitter();
+<body>
+    <dashboard-viewer *ngIf="!isItemViewed"
+    [products]="products$" 
+    [searchInput]="searchInput"
+    (itemViewed)="viewItem($event)" 
+    (isItemViewed)="checkIfViewed($event)"
+    (sortBy)="sortBy($event)"
+    (filterGadget)="byGadget($event)"
+    (filterClothing)="byClothing($event)"
+    (filterMusic)="byMusic($event)"
+    (filterMerchandise)="byMerchandise($event)"
+    (filterAppliances)="byAppliances($event)"
+    (filterMinPrice)="byMinPrice($event)"
+    (filterMaxPrice)="byMaxPrice($event)"
+    (selectedProductQuantity)="getSelectedProductQuantity($event)"
+    (selectedProduct)="addToCart($event)">
+    </dashboard-viewer>
+
+    <product-viewer *ngIf="isItemViewed"
+    [product]="product"
+    [comments]="comments$" 
+    (isGoBack)="goBack($event)"
+    (comment)="addComment($event)"
+    (viewedProduct)="getProduct($event)"
+    (selectedProductQuantity)="getSelectedProductQuantity($event)"
+    (selectedProduct)="addToCart($event)"></product-viewer>
+</body>

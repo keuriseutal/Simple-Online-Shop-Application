@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!--logo and name-->
+        <div class="navbar-header">
+            <i class="material-icons md-36 md-light navbar-form navbar-left">
+                shopping_basket
+            </i>
+            <div class="navbar-brand" id="brand">
+                ClickShop
+            </div>
+
+        </div>
+        <!--form
+
+        <form class="navbar-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search in ClickShop... (not fully working)" #search> &nbsp;
+                <span class="glyphicon glyphicon-search" (click)="onInputSearch(search.value)"></span>
+            </div>
+        </form>
+        -->
+    </div>
+    <div class="col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9">
+        <a routerLink="/login/home" routerLinkActive="active">Home</a> &nbsp;
+        <a routerLink="/login/home/cart" routerLinkActive="active">My Cart</a> &nbsp;
+        <a routerLink="/login/home/profile" routerLinkActive="active">Profile</a> &nbsp;
+        <a routerLink="/login/home/transactions" routerLinkActive="active">Orders</a> &nbsp;
+        <a (click)="onLogOut()" routerLinkActive="active">Logout</a> &nbsp;
+    </div>
+</nav>

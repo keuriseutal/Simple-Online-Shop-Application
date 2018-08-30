@@ -1,0 +1,47 @@
+<!--form-->
+<div class="card">
+  <br>
+  <h1>
+    <b class="f1">Login</b>
+  </h1>
+  <br>
+  <br>
+  <form [formGroup]="form">
+    <div class="input-group 
+    col-xs-offset-2 col-xs-8
+    col-sm-offset-2 col-sm-8
+    col-md-offset-2 col-md-8
+    col-lg-offset-2 col-lg-8">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-user"></i>
+      </span>
+      <input type="text" class="form-control" [formControlName]="fieldName1" placeholder="Username" #uname>
+    </div>
+    <font size="2" color="red">{{unameErrMsg}}</font>
+    <br>
+    <div class="input-group 
+    col-xs-offset-2 col-xs-8
+    col-sm-offset-2 col-sm-8
+    col-md-offset-2 col-md-8
+    col-lg-offset-2 col-lg-8">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-lock"></i>
+      </span>
+      <input type="password" class="form-control" [formControlName]="fieldName2" placeholder="Password" #pass id="pass">
+        <span onmouseover="if (pass.type == 'password') pass.type = 'text'; " onmouseout="if (pass.type = 'text') pass.type = 'password';"
+          class="glyphicon glyphicon-eye-open input-group-addon"></span>
+
+    </div>
+    <font size="2" color="red" style="text-align: right">{{passErrMsg}}</font>
+  </form>
+  <br>
+  <font size="2" color="red">{{errMsg}}</font>
+  <br>
+  <br>
+  <a routerLink="forgot-password">Forgot Password</a>
+  <br>
+  <br>
+  <button type="button" class="btn btn-default" (click)="onLogIn(uname.value, pass.value)">Log In</button>
+</div>
+
+<!--show password-->

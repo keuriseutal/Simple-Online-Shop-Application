@@ -1,0 +1,44 @@
+<!--first column -->
+<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1
+                      col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <h1 style="text-align: center">User Profile</h1>
+  <label>Username:</label>
+  <font size="3" color="red" class="pull-right">{{unameErrMsg}}</font>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['uname']" [value]="loggedUser['uname']" readonly #uname>
+  <label>First Name:</label>
+  <font size="3" color="red" class="pull-right">{{fnameErrMsg}}</font>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['fname']" [value]="loggedUser['fname']" #fname>
+  <label>Middle Name:</label>
+  <font size="3" color="red" class="pull-right">{{mnameErrMsg}}</font>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['mname']" [value]="loggedUser['mname']" #mname>
+  <label>Last Name:</label>
+  <font size="3" color="red" class="pull-right">{{lnameErrMsg}}</font>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['lname']" [value]="loggedUser['lname']" #lname>
+  <label>Email:</label>
+  <font size="3" color="red" class="pull-right">{{emailErrMsg}}</font>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['email']" [value]="loggedUser['email']" #email>
+  <label>Birthdate:</label>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['bdate']" [value]="loggedUser['bdate']" readonly #bdate>
+  <label>Interests:</label>
+  <font size="3" color="red" class="pull-right">{{interestsErrMsg}}</font>
+  <textarea class="form-control" [(ngModel)]="loggedUser['interests']" [value]="loggedUser['interests']" #interests rows="6"></textarea>
+</div>
+<!--2nd column -->
+<img src="{{loggedUser.img}}">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+<font size="3" color="green" style="text-align: center">{{msg}}</font>
+<br>
+<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button type="button" id="back" class="btn btn-default" (click)="onGoBack()">Back</button>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button *ngIf="!isSuccess" type="button" id="edit" class="btn btn-default" (click)="onEditProfile(uname.value, fname.value, mname.value, lname.value,
+                 email.value, bdate.value, interests.value)">Edit Profile</button>
+<!--<button disabled *ngIf="isSuccess" type="button" id="edit" class="btn btn-default" (click)="onEditProfile(uname.value, fname.value, mname.value, lname.value,
+                 email.value, bdate.value, interests.value)">Edit Profile</button>-->

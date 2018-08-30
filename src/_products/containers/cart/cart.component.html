@@ -1,0 +1,12 @@
+<navbar-viewer
+(logOut)="setAsLoggedOut($event)"></navbar-viewer>
+<body>
+  <cart-form 
+  [cart$]="cart$"
+  (removedProduct)="removeFromCart($event)"
+  (cartTotal)="getTotal($event)"
+  (checkOut)="checkOut()"
+  (quantity)="getQuantity($event)"
+  (item)="updateQuantityOfItem($event)"
+  (submitCart)="submitAsOrder($event)"></cart-form>
+</body>

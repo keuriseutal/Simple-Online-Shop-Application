@@ -1,0 +1,62 @@
+#brand{
+  font-family: Noto Sans, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 25px; 
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+    vertical-align: middle;
+  }
+
+  .material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+  }
+  .navbar-default {
+    background-color:rgb(4, 99, 51);
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+
+  a{
+    font-family: Noto Sans, sans-serif;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+.active{
+  color: white;
+  font-size: 20px;
+  font-weight: 200px;
+  }
+
+a:focus{
+  color:white;
+}
+
+a:hover{
+  color: rgb(214, 205, 205);
+}
+
+.cart:hover{
+  color: rgb(214, 205, 205);
+}
+
+.glyphicon.glyphicon-search{
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.glyphicon.glyphicon-search:hover{
+  color: rgb(214, 205, 205);
+}
+
+.navbar-form .form-control{
+  width: 700px;
+}
+  

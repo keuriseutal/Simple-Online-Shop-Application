@@ -1,0 +1,53 @@
+<img src="{{product.img}}">
+<div class="order-form
+col-xs-offset-8
+col-sm-offset-8
+col-md-offset-8
+col-lg-offset-8">
+    <font size=7><b>{{product.name}}</b></font><br>
+    <font size=6 id="price"><b>{{product.price | currency:'PHP '}}</b></font><br><br>
+    <font size=5><i>Category: {{product.category}}</i></font><br>   
+    <font size=5><b>Status: {{product.status}}</b></font><br><br><br>
+    <div class="input-group">
+        <input type="number" value="1" min="1" max={{product.stock}} class="form-control " id="range" #quantity> &nbsp; &nbsp;
+        <i class="material-icons cart md-dark md-80" data-toggle="tooltip" title="Add To Cart?" (click)="onAddToCart(product, quantity.value)">
+            shopping_cart
+        </i>
+    </div><br><br><br>
+    <button type="button" class="btn btn-default" id="back" (click)="onGoBack()">Back</button> 
+</div>
+<div class="product-details 
+col-xs-7
+col-sm-7
+col-md-7
+col-lg-7">
+    <font size=5><b>Product Description</b></font><br>
+    <font size=3>{{product.details}}</font><br><br><br>
+    <hr>
+    <font size=3><b>Comments</b></font><br><br>
+    <div *ngIf="commentHolder.length == (comments | async).length">
+            <font size=2><i>No available comment(s)</i></font><br> 
+    </div>
+    <br>
+    <div *ngFor="let c of (comments | async); let i = index" >
+        <div *ngIf="c.productId == product.id">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <b>{{c.author}}</b><br>
+                    {{c.msg}}
+                </div>
+                <div class="panel-footer" style="text-align: right;">{{c.date}}</div>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    <font size=3><b>Add Comment</b></font><br><br>
+    <div class="pull-right">{{charCount}} characters </div>
+    <textarea class="form-control" rows="5" (input)="onInput(comment.value)" #comment></textarea><br>
+    <font color="red" *ngIf="!validComment">{{msg}}</font>
+    <font color="green" *ngIf="validComment">{{msg}}</font>
+    <button type="button" class="btn btn-default pull-right" (click)="onAddComment(comment.value, product)">Add Comment</button> 
+    <br><br>
+
+</div>

@@ -1,0 +1,43 @@
+textarea
+{
+    overflow-y:scroll;
+}
+
+button {width: 400%;}
+
+div.center{
+    text-align: center;
+}
+
+img{
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    max-width: 380px;
+    max-height: 380px;
+    top: 50px;
+    left: 100px;
+    right: -100px;
+    bottom: -50px;
+}
+
+button#edit{
+    position: relative;
+    max-width: 120px;
+    max-height: 50px;
+}
+
+button#back{
+    position: relative;
+    max-width: 120px;
+    max-height: 50px;
+}
+
+
+.btn-default{
+    background-color:rgb(4, 99, 51);
+    color: white;
+  }
+  .btn-default:hover{
+    background-color:black;
+  }

@@ -1,0 +1,224 @@
+{
+  "loggedUser": [],
+  "users": [
+    {
+      "id": 1,
+      "uname": "sooyaa__",
+      "pass": "chichu",
+      "isLoggedIn": false,
+      "img": "https://pm1.narvii.com/6865/913c73fc425086e11cca41ca873b9e35b89e8efdr1-1242-934v2_hq.jpg",
+      "fname": "Jisoo",
+      "mname": "Beul",
+      "lname": "Kim",
+      "email": "kj@gmail.com",
+      "mobile": 1111,
+      "bdate": "01/03/1995",
+      "interests": "reading, watching anime, playing with dalgom, messing around"
+    },
+    {
+      "id": 2,
+      "uname": "jennierubyjane",
+      "pass": "jendeukie",
+      "isLoggedIn": false,
+      "img": "https://data.whicdn.com/images/313916116/large.jpg",
+      "fname": "Jennie",
+      "mname": "Laek",
+      "lname": "Kim",
+      "email": "jk@gmail.com",
+      "mobile": 2222,
+      "bdate": "01/16/1996",
+      "interests": "rapping, playing with dogs, unnies"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "RV Lightstick",
+      "price": 1800,
+      "category": "Merchandise",
+      "img": "https://cdn.shopify.com/s/files/1/2420/2037/products/Screen_Shot_2018-07-24_at_11.45.20_AM_1024x1024.png?v=1532457976",
+      "quantity": 1,
+      "stock": 5,
+      "status": "Available",
+      "details": "RED VELVET OFFICIAL LIGHTSTICK: A KimchiManduBong (a.k.a. KimManBong) designed for Luvies"
+    },
+    {
+      "id": 2,
+      "name": "Black Boots",
+      "price": 200,
+      "category": "Clothing",
+      "img": "https://cdn.shopify.com/s/files/1/0419/1525/products/mens-black-leather-president-boot-1_1024x1024.JPG?v=1533933937",
+      "quantity": 1,
+      "stock": 6,
+      "status": "Available",
+      "details": "Black Boots... perfect for rainy seasons"
+    },
+    {
+      "id": 3,
+      "name": "Square Up",
+      "price": 2000,
+      "category": "Music",
+      "img": "https://3.bp.blogspot.com/-j8H8GmA9wfU/Wxob5S6jqsI/AAAAAAAAXtA/kMZ20n-cJ5Q3FGKEz7MWztKBMYo8ib5dQCLcBGAs/s1600/DfJbCX4VMAAI0NP.jpg",
+      "quantity": 2,
+      "stock": 15,
+      "status": "Available",
+      "details": "BlackPink 1st Mini Album. OUT NOW!"
+    },
+    {
+      "id": 4,
+      "name": "Smart TV",
+      "price": 50000,
+      "category": "Appliances",
+      "img": "https://thegoodguys.sirv.com/products/50047605/50047605_510700.PNG?scale.height=505&scale.width=773&canvas.height=505&canvas.width=773&canvas.opacity=0&format=png&png.optimize=true",
+      "quantity": 3,
+      "stock": 20,
+      "status": "Available",
+      "details": "Samsung(108cm) UHD LED LCD Smart TV"
+    },
+    {
+      "id": 5,
+      "name": "Camera",
+      "price": 22000,
+      "category": "Gadget",
+      "img": "https://www.cliftoncameras.co.uk/uploads/variants/M10SilverBody2.png",
+      "quantity": 1,
+      "stock": 25,
+      "status": "Available",
+      "details": "This is a camera..."
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "productId": 1,
+      "msg": "KimchiManduBong JJANG!!!!",
+      "author": "sooyaa__",
+      "date": "8/23/2018 9:47:10"
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "msg": "I loved it <3",
+      "author": "jennierubyjane",
+      "date": "8/23/2018 9:50:15"
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "msg": "It fits so well. Thank You!",
+      "author": "sooyaa__",
+      "date": "8/21/2018 8:14:57"
+    },
+    {
+      "id": 4,
+      "productId": 1,
+      "msg": "KimchiManduBong x PyongBong HWAITING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "author": "sooyaa__",
+      "date": "8/26/2018 14:50:5"
+    },
+    {
+      "id": 5,
+      "productId": 2,
+      "msg": "JJANG     console.log(\"logged Out: \" + user[\"uname\"] + user[\"isLoggedIn\"]);\n     console.log(\"logged Out: \" + user[\"uname\"] + user[\"isLoggedIn\"]);\n",
+      "author": "jennierubyjane",
+      "date": "8/27/2018 15:19:38"
+    },
+    {
+      "id": 6,
+      "productId": 2,
+      "msg": "fdsfjsdlkfjlfjslfjslfjljfjfjdaf;j;afjdlkfj;afj;dsafjdjfdjfldsjfjf;ldsj;flkj;fljsafjl;fjd;lfjdslkfjslkfj;lfjajf",
+      "author": "sooyaa__",
+      "date": "8/29/2018 9:3:7"
+    },
+    {
+      "id": 7,
+      "productId": 4,
+      "msg": "YAYAYAYAYAYAAYYAAYAYAYAYAAYAAYAAAYAYYAYAYAYAAAYYAYAYAYAYAAYAYAYAYYAAYAYAYYAAYYAYAYAAYAYYAAYAYYAAYAYYAAYAYAY",
+      "author": "jennierubyjane",
+      "date": "8/30/2018 15:42:39"
+    }
+  ],
+  "cart": [
+    {
+      "id": 11,
+      "total": 1800,
+      "userId": 1,
+      "name": "RV Lightstick",
+      "price": 1800,
+      "category": "Merchandise",
+      "img": "https://cdn.shopify.com/s/files/1/2420/2037/products/Screen_Shot_2018-07-24_at_11.45.20_AM_1024x1024.png?v=1532457976",
+      "quantity": 1,
+      "stock": 5,
+      "status": "In Cart",
+      "details": "RED VELVET OFFICIAL LIGHTSTICK: A KimchiManduBong (a.k.a. KimManBong) designed for Luvies"
+    },
+    {
+      "id": 15,
+      "total": 23800,
+      "userId": 1,
+      "name": "Camera",
+      "price": 22000,
+      "category": "Gadget",
+      "img": "https://www.cliftoncameras.co.uk/uploads/variants/M10SilverBody2.png",
+      "quantity": 1,
+      "stock": 25,
+      "status": "In Cart",
+      "details": "This is a camera..."
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "total": 3800,
+      "userId": 1,
+      "name": "RV Lightstick",
+      "price": 1800,
+      "category": "Merchandise",
+      "img": "https://cdn.shopify.com/s/files/1/2420/2037/products/Screen_Shot_2018-07-24_at_11.45.20_AM_1024x1024.png?v=1532457976",
+      "quantity": 1,
+      "stock": 5,
+      "status": "Pending",
+      "details": "RED VELVET OFFICIAL LIGHTSTICK: A KimchiManduBong (a.k.a. KimManBong) designed for Luvies"
+    },
+    {
+      "id": 2,
+      "total": 3800,
+      "userId": 1,
+      "name": "Square Up",
+      "price": 2000,
+      "category": "Music",
+      "img": "https://3.bp.blogspot.com/-j8H8GmA9wfU/Wxob5S6jqsI/AAAAAAAAXtA/kMZ20n-cJ5Q3FGKEz7MWztKBMYo8ib5dQCLcBGAs/s1600/DfJbCX4VMAAI0NP.jpg",
+      "quantity": 1,
+      "stock": 15,
+      "status": "Pending",
+      "details": "BlackPink 1st Mini Album. OUT NOW!"
+    },
+    {
+      "id": 3,
+      "total": 6000,
+      "userId": 1,
+      "name": "Square Up",
+      "price": 2000,
+      "category": "Music",
+      "img": "https://3.bp.blogspot.com/-j8H8GmA9wfU/Wxob5S6jqsI/AAAAAAAAXtA/kMZ20n-cJ5Q3FGKEz7MWztKBMYo8ib5dQCLcBGAs/s1600/DfJbCX4VMAAI0NP.jpg",
+      "quantity": 3,
+      "stock": 15,
+      "status": "Pending",
+      "details": "BlackPink 1st Mini Album. OUT NOW!"
+    },
+    {
+      "id": 4,
+      "total": 150000,
+      "userId": 1,
+      "name": "Smart TV",
+      "price": 50000,
+      "category": "Appliances",
+      "img": "https://thegoodguys.sirv.com/products/50047605/50047605_510700.PNG?scale.height=505&scale.width=773&canvas.height=505&canvas.width=773&canvas.opacity=0&format=png&png.optimize=true",
+      "quantity": 3,
+      "stock": 20,
+      "status": "Pending",
+      "details": "Samsung(108cm) UHD LED LCD Smart TV"
+    }
+  ],
+  "purchases": []
+}
