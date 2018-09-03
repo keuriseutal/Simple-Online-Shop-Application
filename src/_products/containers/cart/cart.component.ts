@@ -86,7 +86,7 @@ export class CartComponent implements OnInit {
       continue;
     }
   } //end on checkOut
-
+  /*
   getQuantity(event: number) {
     this.quantity = event;
   } //end getQuantity
@@ -102,7 +102,30 @@ export class CartComponent implements OnInit {
       this.cartStore.dispatch(new fromProductStore.UpdateProductInCart(c));
     });
   } //end updateQuantityOfItem
+*/
+  addQuantity(event: Item) {
+    let cart: Item[];
+    this.cart$.subscribe(c => (cart = c));
 
+    const mappedCart = cart.map(c => {
+      if (c.id === event.id) {
+        c = { ...c, total: this.total, quantity: c.quantity+1 };
+      }
+      this.cartStore.dispatch(new fromProductStore.UpdateProductInCart(c));
+    });
+  }
+
+  subtractQuantity(event: Item) {
+    let cart: Item[];
+    this.cart$.subscribe(c => (cart = c));
+
+    const mappedCart = cart.map(c => {
+      if (c.id === event.id) {
+        c = { ...c, total: this.total, quantity: c.quantity-1 };
+      }
+      this.cartStore.dispatch(new fromProductStore.UpdateProductInCart(c));
+    });
+  }
   submitAsOrder() {
     //missing: update quantity for existing products in orders
     let cart: Item[];

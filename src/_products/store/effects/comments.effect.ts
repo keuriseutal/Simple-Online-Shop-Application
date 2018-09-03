@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Effect, Actions } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, switchMap, catchError } from 'rxjs/operators';
+import { map, switchMap, catchError, mergeMap } from 'rxjs/operators';
 
 import * as commentsActions from '../actions/comments.action';
 import * as fromServices from '../../services';
@@ -42,7 +42,7 @@ export class CommentsEffects {
   @Effect()
   updateComment$ = this.actions$.ofType(commentsActions.UPDATE_COMMENT).pipe(
     map((action: commentsActions.UpdateComment) => action.payload),
-    switchMap(comment => {
+    mergeMap(comment => {
       return this.commentsService
         .updateComment(comment)
         .pipe(

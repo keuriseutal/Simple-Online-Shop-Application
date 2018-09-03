@@ -1,35 +1,19 @@
 
 /*#region image-display */
-.card {
-    font-family: Noto Sans, sans-serif;
-    width: 800px;
-    height: 500px;
-    
-    top: 15%;
-    left: 0.5%;
-    background-color:whitesmoke;
-    
-    overflow-x: hidden;
-    padding-top: 20px;
-    vertical-align: middle;
-}
 
 img{
-    position: absolute;
+    position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 1;
-    width: 800px;
-    height: 500px;
-    left: 1.5%;
+    height: 40%;
+    width: 90%;
 }
 /*#endregion*/
 
 /*#region product form*/
 .order-form {
     font-family: Noto Sans, sans-serif;
-    position: fixed;
     padding-top: 20px;
-    padding-left: 50px;
     word-wrap: break-word;
   }
 
@@ -80,8 +64,6 @@ img{
 /*#region product details */
 .product-details{
     font-family: Noto Sans, sans-serif;
-    padding-top: 550px;
-    padding-left: 50px;
     word-wrap: break-word;
 }
 

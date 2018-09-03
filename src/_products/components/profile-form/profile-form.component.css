@@ -3,7 +3,6 @@ textarea
     overflow-y:scroll;
 }
 
-button {width: 400%;}
 
 div.center{
     text-align: center;
@@ -13,24 +12,19 @@ img{
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 1;
-    max-width: 380px;
-    max-height: 380px;
+    max-width: 80%;
+    max-height: 80%;
     top: 50px;
-    left: 100px;
-    right: -100px;
-    bottom: -50px;
 }
 
 button#edit{
-    position: relative;
-    max-width: 120px;
-    max-height: 50px;
+    width: 28%;
+    height: 10%;
 }
 
 button#back{
-    position: relative;
-    max-width: 120px;
-    max-height: 50px;
+    width: 28%;
+    height: 10%;
 }
 
 

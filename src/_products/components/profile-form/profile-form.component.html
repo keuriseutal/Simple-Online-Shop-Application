@@ -1,10 +1,10 @@
 <!--first column -->
 <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1
-                      col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                      col-xs-10 col-sm-10 col-md-6 col-lg-6">
   <h1 style="text-align: center">User Profile</h1>
   <label>Username:</label>
   <font size="3" color="red" class="pull-right">{{unameErrMsg}}</font>
-  <input type="text" class="form-control" [(ngModel)]="loggedUser['uname']" [value]="loggedUser['uname']" readonly #uname>
+  <input type="text" class="form-control" [(ngModel)]="loggedUser['uname']" [value]="loggedUser['uname']" #uname>
   <label>First Name:</label>
   <font size="3" color="red" class="pull-right">{{fnameErrMsg}}</font>
   <input type="text" class="form-control" [(ngModel)]="loggedUser['fname']" [value]="loggedUser['fname']" #fname>
@@ -24,21 +24,26 @@
   <textarea class="form-control" [(ngModel)]="loggedUser['interests']" [value]="loggedUser['interests']" #interests rows="6"></textarea>
 </div>
 <!--2nd column -->
-<img src="{{loggedUser.img}}">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-<font size="3" color="green" style="text-align: center">{{msg}}</font>
-<br>
-<br>
-<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-<button type="button" id="back" class="btn btn-default" (click)="onGoBack()">Back</button>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-<button *ngIf="!isSuccess" type="button" id="edit" class="btn btn-default" (click)="onEditProfile(uname.value, fname.value, mname.value, lname.value,
+<div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-8 col-lg-offset-8">
+  <img src="{{loggedUser.img}}">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+  <font size="3" color="green" style="text-align: center">{{msg}}</font>
+ 
+  <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp;
+</div>
+<div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-8 col-lg-offset-8">
+
+  <button type="button" id="back" class="btn btn-default" (click)="onGoBack()">Back</button>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <button type="button" id="edit" class="btn btn-default" (click)="onEditProfile(uname.value, fname.value, mname.value, lname.value,
                  email.value, bdate.value, interests.value)">Edit Profile</button>
-<!--<button disabled *ngIf="isSuccess" type="button" id="edit" class="btn btn-default" (click)="onEditProfile(uname.value, fname.value, mname.value, lname.value,
-                 email.value, bdate.value, interests.value)">Edit Profile</button>-->
+  <br>
+  <br>
+</div>

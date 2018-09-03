@@ -14,7 +14,9 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   onInputSearch(input) {
     this.searchInput.emit(input);

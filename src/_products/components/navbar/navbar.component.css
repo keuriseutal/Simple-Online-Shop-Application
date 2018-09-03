@@ -1,62 +1,63 @@
-#brand{
+#brand {
   font-family: Noto Sans, sans-serif;
   font-weight: bold;
   color: white;
-  font-size: 25px; 
+  font-size: 25px;
 }
 
-.material-icons.md-36 {
-    font-size: 36px;
-    vertical-align: middle;
-  }
+.material-icons.md-32 {
+  font-size: 32px;
+  vertical-align: middle;
+}
 
-  .material-icons.md-light {
-    color: rgba(255, 255, 255, 1);
-  }
-  .navbar-default {
-    background-color:rgb(4, 99, 51);
-    background-image: none;
-    background-repeat: no-repeat;
-  }
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.navbar-default {
+  background-color: rgba(4, 99, 51, 1);
+}
 
-  a{
-    font-family: Noto Sans, sans-serif;
-    cursor: pointer;
-    color: white;
-    font-size: 15px;
-    text-decoration: none;
-  }
+.navbar-collapse{
+  overflow-y: auto;
+}
 
-.active{
+.navbar-default a {
+  font-family: Noto Sans, sans-serif;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.navbar-default a.active {
   color: white;
   font-size: 20px;
   font-weight: 200px;
-  }
-
-a:focus{
-  color:white;
 }
 
-a:hover{
+.navbar-default a:focus {
+  color: white;
+}
+
+.navbar-default a:hover {
   color: rgb(214, 205, 205);
 }
 
-.cart:hover{
+.cart:hover {
   color: rgb(214, 205, 205);
 }
 
-.glyphicon.glyphicon-search{
+.glyphicon.glyphicon-search {
   cursor: pointer;
   font-size: 20px;
   color: white;
   vertical-align: middle;
   font-weight: bold;
 }
-.glyphicon.glyphicon-search:hover{
+.glyphicon.glyphicon-search:hover {
   color: rgb(214, 205, 205);
 }
 
-.navbar-form .form-control{
+.navbar-form .form-control {
   width: 700px;
 }
-  

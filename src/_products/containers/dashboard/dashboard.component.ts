@@ -75,6 +75,38 @@ export class DashboardComponent implements OnInit {
     this.getProducts();
   }
 
+  addQuantity(product: Product) {
+    let newProduct: Product = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      category: product.category,
+      img: product.img,
+      quantity: product.quantity + 1,
+      stock: product.stock,
+      status: product.status,
+      details: product.details
+    };
+
+    this.store.dispatch(new fromStore.UpdateProduct(newProduct)); 
+  }
+
+  subtractQuantity(product: Product) {
+    let newProduct: Product = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      category: product.category,
+      img: product.img,
+      quantity: product.quantity - 1,
+      stock: product.stock,
+      status: product.status,
+      details: product.details
+    };
+
+    this.store.dispatch(new fromStore.UpdateProduct(newProduct));
+  }
+
   getSelectedProductQuantity(event: number) {
     this.quantity = event;
   }
@@ -90,14 +122,18 @@ export class DashboardComponent implements OnInit {
     //update product stock quantity
     //product.stock -= this.quantity * 1;
     product.quantity = this.quantity * 1;
+    //if(product.stock == 0){
+    //  product.status = "Sold Out";
+    //}
     this.store.dispatch(new fromStore.UpdateProduct(product));
 
     //add product to cart
     //-----get cart of current user
     this.cart$.subscribe(c => (this.cart = c));
+    
     if (this.cart.length == 0) {
       let newCart: Item = {
-        id: parseInt(this.loggedUser["id"].toString()+product.id.toString()),
+        id: parseInt(this.loggedUser["id"].toString() + product.id.toString()),
         total: this.quantity * product.price,
         userId: this.loggedUser["id"],
         name: product.name,
@@ -112,14 +148,17 @@ export class DashboardComponent implements OnInit {
       this.cartStore.dispatch(new fromStore.AddProductToCart(newCart));
     }
     for (let i = 0; i < this.cart.length; i++) {
-      if (this.cart[i].id == parseInt(this.loggedUser["id"].toString()+product.id.toString())) {
+      if (
+        this.cart[i].id ==
+        parseInt(this.loggedUser["id"].toString() + product.id.toString())
+      ) {
         //update quantity of product if it already exists in cart
         product.quantity == this.cart[i].quantity + this.quantity * 1;
         let newCart: Item = {
           id: this.cart[i].id,
           total: this.cart[i].total + this.quantity * product.price,
           userId: this.loggedUser["id"],
-          name:this.cart[i].name,
+          name: this.cart[i].name,
           price: this.cart[i].price,
           category: this.cart[i].category,
           img: this.cart[i].img,
@@ -131,9 +170,15 @@ export class DashboardComponent implements OnInit {
 
         this.cartStore.dispatch(new fromStore.UpdateProductInCart(newCart));
       } //end if product already exists in user's cart
-      else if (this.cart[i].id != parseInt(this.loggedUser["id"].toString()+product.id.toString())) {
+      else if (
+        this.cart[i].id !=
+        parseInt(this.loggedUser["id"].toString() + product.id.toString())
+      ) {
+        
         let newCart: Item = {
-          id: parseInt(this.loggedUser["id"].toString()+product.id.toString()),
+          id: parseInt(
+            this.loggedUser["id"].toString() + product.id.toString()
+          ),
           total: this.cart[i].total + this.quantity * product.price,
           userId: this.loggedUser["id"],
           name: product.name,
@@ -147,24 +192,6 @@ export class DashboardComponent implements OnInit {
         };
         this.cartStore.dispatch(new fromStore.AddProductToCart(newCart));
       } //end if product does not exist in user's cart
-
-      /* else{
-        let newCart: Item = {
-          id: 0,
-          total: this.quantity * product.price,
-          userId: this.loggedUser["id"],
-          productId: product.id,
-          name: product.name,
-          price: product.price,
-          category: product.category,
-          img: product.img,
-          quantity: product.quantity,
-          stock: product.stock,
-          status: product.status,
-          details: product.details
-        };
-        this.cartStore.dispatch(new fromStore.AddProductToCart(newCart));
-      }*/
     } //end LOOP
     window.alert(
       this.quantity + " " + product.name + " was successfully added to cart"

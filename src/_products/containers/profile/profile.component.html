@@ -1,7 +1,7 @@
 <navbar-viewer (logOut)="setAsLoggedOut($event)"></navbar-viewer>
 
 <body>
-    <profile-form [loggedUser]="loggedUser" [comments$]="comments$" [users$]="users$" (oldUname)="updatePreviousComments($event)"
+    <profile-form [loggedUser]="loggedUser" [users$]="users$" [comments$]="comments$" 
         (updatedLoggedUser)="updateUserProfile($event)">
     </profile-form>
 </body>

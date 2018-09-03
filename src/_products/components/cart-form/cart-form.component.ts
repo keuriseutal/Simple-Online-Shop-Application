@@ -14,6 +14,12 @@ import { Product } from "../../models/products.model";
 export class CartFormComponent implements OnInit {
   modalRef: BsModalRef;
 
+  
+  //actions for setting quantity
+  @Output()
+  addQuantity = new EventEmitter();
+  @Output()
+  subtractQuantity = new EventEmitter();
 
   @Input()
   cart$: Observable<Item[]>;
@@ -21,10 +27,7 @@ export class CartFormComponent implements OnInit {
   removedProduct = new EventEmitter();
   @Output()
   cartTotal = new EventEmitter();
-  @Output()
-  item = new EventEmitter();
-  @Output()
-  quantity = new EventEmitter();
+
   @Output()
   checkOut = new EventEmitter();
   @Output()
@@ -42,6 +45,16 @@ export class CartFormComponent implements OnInit {
 
   ngOnInit() {
     this.cart$.subscribe(c => (this.cart = c));
+  }
+
+  add(p: Product) {
+    this.addQuantity.emit(p);
+    this.getTotal();
+  }
+
+  subtract(p: Product) {
+    this.subtractQuantity.emit(p);
+    this.getTotal();
   }
 
   openModal(template: TemplateRef<any>, product: Product) {
@@ -74,12 +87,6 @@ export class CartFormComponent implements OnInit {
     if (userOption) {
       this.removedProduct.emit(product);
     }
-  }
-
-  updateProductQuantity(item, quantity){
-    this.item.emit(item);
-    this.quantity.emit(quantity);
-    this.getTotal();
   }
 
   onCheckOut() {

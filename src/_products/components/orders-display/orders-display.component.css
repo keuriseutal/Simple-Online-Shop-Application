@@ -1,106 +1,105 @@
 /*#region cart details*/
 .cart-details {
-    font-family: Noto Sans, sans-serif;
-    position: fixed;
-    padding-top: 20px;
-    word-wrap: break-word;
-    width: 95%;
-  }
-  
-  
-  #price {
-    color: rgb(4, 99, 51);
-  }
-  /*#endregion*/
-  
-  /*#region products display*/
-  .product-display {
-    font-family: Noto Sans, sans-serif;
-    padding-top: 80px;
-    padding-left: 50px;
-    padding-bottom: 80px;
-    word-wrap: break-word;
-  }
-  
-  hr {
-    color: black;
-  }
-  /*#endregion*/
-  
-  /*#region product table*/
-  .glyphicon-remove#remove{
-    color: rgb(160, 6, 6);
-  }
-  
-  .glyphicon-remove#remove:hover{
-    color: rgb(0, 0, 0);
-  }
-  
-  .btn-default {
-    background-color: rgb(4, 99, 51);
-    color: white;
-  }
-  
-  .btn-default:hover {
-    background-color: black;
-  }
-  
-  .btn-default#back {
-    float: left;
-  }
-  
-  img#product {
-    max-width: 100px;
-    height: 100px;
-  }
-  
-  table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td,
-  th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
-  
-  th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgb(4, 99, 51);
-    color: white;
-  }
-  
-  #price {
-    color: rgb(4, 99, 51);
-  }
-  
-  #quantity{
-    height: 30px;
-  }
-  
-  .material-icons.cart:hover {
-    color: black;
-    cursor: pointer;
-  }
-  
-  .material-icons.md-20 {
-    font-size: 20px;
-    vertical-align: middle;
-  }
-  .material-icons.md-dark {
-    color: rgb(4, 99, 51);
-  }
-  /*#endregion*/
-  
+  font-family: Noto Sans, sans-serif;
+  padding-top: 20px;
+  word-wrap: break-word;
+  width: 80%;
+}
+
+#price {
+  color: rgb(4, 99, 51);
+}
+/*#endregion*/
+
+/*#region products display*/
+.product-display {
+  font-family: Noto Sans, sans-serif;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-bottom: 80px;
+  word-wrap: break-word;
+}
+
+hr {
+  color: black;
+}
+/*#endregion*/
+
+/*#region product table*/
+.glyphicon-remove#remove {
+  color: rgb(160, 6, 6);
+}
+
+.glyphicon-remove#remove:hover {
+  color: rgb(0, 0, 0);
+}
+
+.btn-default {
+  background-color: rgb(4, 99, 51);
+  color: white;
+}
+
+.btn-default:hover {
+  background-color: black;
+}
+
+.btn-default#back {
+  float: left;
+}
+
+img#product {
+  max-width: 100px;
+  height: 100px;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;  
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(4, 99, 51);
+  color: white;
+}
+
+#price {
+  color: rgb(4, 99, 51);
+}
+
+#quantity {
+  height: 30px;
+}
+
+.material-icons.cart:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.material-icons.md-20 {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.material-icons.md-dark {
+  color: rgb(4, 99, 51);
+}
+/*#endregion*/

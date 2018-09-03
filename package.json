@@ -30,6 +30,7 @@
     "@ngrx/store-devtools": "^6.1.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "jh-angular-number-picker": "0.0.5",
     "ngrx-store-freeze": "^0.2.4",
     "ngx-bootstrap": "^3.0.1",
     "rxjs": "^6.0.0",

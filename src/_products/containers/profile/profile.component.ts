@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import * as fromUserStore from "../../../_users/store";
 import * as fromCommentStore from "../../store";
 
@@ -15,63 +16,57 @@ import { User } from "../../../_users/models/users.model";
 })
 export class ProfileComponent implements OnInit {
   comments$: Observable<Comment[]>;
-  comments: Comment[];
   users$: Observable<User[]>;
   loggedUser: User;
-
+  comments: Comment[];
   oldUname: string;
-
   constructor(
     private commentStore: Store<fromCommentStore.ProductsState>,
     private userStore: Store<fromUserStore.UsersState>
   ) {}
 
   ngOnInit() {
-    //update author of comments when user edits username
-    this.comments$ = this.commentStore.select(fromCommentStore.getAllComments);
-    this.comments$.subscribe(c => (this.comments = c));
+    this.loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    this.oldUname = this.loggedUser.uname;
+    console.log(this.oldUname);
     //to compare username and email from other users -- edited username and email must be unique
     this.users$ = this.userStore.select(fromUserStore.getAllUsers);
-
-    this.loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    this.comments$ = this.commentStore
+    .select(fromCommentStore.getAllComments)
+    .pipe(map(comments => comments.filter(c => this.oldUname == c.author)));
+  this.commentStore.dispatch(new fromCommentStore.GetComments());
+  
   }
 
   setAsLoggedOut(event) {
-
     let user = this.loggedUser;
     user.isLoggedIn = false;
     this.userStore.dispatch(new fromUserStore.UpdateUser(user));
 
     console.log("logged Out: " + user["uname"] + user["isLoggedIn"]);
     localStorage.removeItem("loggedUser");
-
   }
 
   updateUserProfile(event: User) {
-    localStorage.setItem("loggedUser", JSON.stringify(event));
-
-    this.userStore.dispatch(new fromUserStore.UpdateUser(event));
-    console.log("update: " + event["uname"] + event["isLoggedIn"]);
-
+    //updateComments
+    this.comments$.subscribe(c => (this.comments = c));
     for (let i = 0; i < this.comments.length; i++) {
-      console.log("author: " + this.comments[i].author);
-      if (this.comments[i].author == this.oldUname) {
-        console.log(
-          "oldUname: " + this.oldUname + " newUname: " + event["uname"]
-        );
-        this.comments[i].author = event.uname;
-        this.commentStore.dispatch(
-          new fromCommentStore.UpdateComment(this.comments[i])
-        );
-        continue;
-      } else {
-        continue;
-      }
+      let newComment: Comment = {
+        id:this.comments[i].id,
+        productId: this.comments[i].productId,
+        msg: this.comments[i].msg,
+        author: event.uname,
+        date: this.comments[i].date
+      };
+      this.commentStore.dispatch(
+        new fromCommentStore.UpdateComment(newComment)
+      );
     }
-    console.log("update comments DONE");
+    window.alert("Previous comments were updated successfully");
+    
+    //update profile
+    localStorage.setItem("loggedUser", JSON.stringify(event));
+    this.userStore.dispatch(new fromUserStore.UpdateUser(event));
   }
 
-  updatePreviousComments(event: string) {
-    this.oldUname = event;
-  }
 }

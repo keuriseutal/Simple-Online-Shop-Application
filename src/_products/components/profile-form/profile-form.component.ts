@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Location } from "@angular/common";
 import { Observable } from "rxjs";
 import { User } from "../../../_users/models/users.model";
+import { Comment } from "../../models/comments.model";
 
 @Component({
   selector: "profile-form",
@@ -16,11 +17,8 @@ export class ProfileFormComponent implements OnInit {
   @Input()
   users$: Observable<User[]>;
   users: User[];
-  comments: Comment[];
   @Output()
   updatedLoggedUser = new EventEmitter();
-  @Output()
-  oldUname = new EventEmitter();
 
   msg: string = "";
   unameErrMsg: string = "";
@@ -35,11 +33,11 @@ export class ProfileFormComponent implements OnInit {
 
   isSuccess: boolean = false;
 
+  comments: Comment[];
   constructor(private location: Location) {}
 
   ngOnInit() {
     this.users$.subscribe(u => (this.users = u));
-    this.comments$.subscribe(c => (this.comments = c));
   }
 
   onGoBack() {
@@ -70,19 +68,14 @@ export class ProfileFormComponent implements OnInit {
     //check if domain is @gmail.com
     if (emailDomain == "@gmail.com" && isCharForDomainExists) {
       //check if email is unique
+
       for (let i = 0; i < this.users.length; i++) {
-        if (this.loggedUser.email == email) {
-          console.log("old email");
+        if (email != this.users[i].email) {
           this.isUniqueEmail = true;
-          break;
-        } else if (this.users[i].email != email) {
-          console.log("valid email");
-          this.isUniqueEmail = true;
-        } else if (this.users[i].email == email) {
-          console.log("existing email");
+          this.emailErrMsg = "";
+        } else if (email == this.users[i].email) {
           this.emailErrMsg = "Email is already registered to another user";
           this.isUniqueEmail = false;
-          break;
         } //end check if email is unique or equal the current email of the user
       } //end LOOP - check if email of other users
     } else {
@@ -95,19 +88,13 @@ export class ProfileFormComponent implements OnInit {
   checkUname(uname) {
     //check if username is unique
     for (let i = 0; i < this.users.length; i++) {
-      if (this.loggedUser.uname == uname) {
+      if (uname != this.users[i].uname) {
         this.isUniqueUname = true;
-        console.log("old uname");
-        break;
-      } else if (this.users[i].uname != uname) {
-        this.isUniqueEmail = true;
-        console.log("valid uname");
-      } else if (this.users[i].uname == uname) {
-        console.log("existing uname");
+        this.unameErrMsg = "";
+      } else if (uname == this.users[i].uname) {
         this.unameErrMsg = "Username is already registered to another user";
         this.isUniqueUname = false;
-        break;
-      } //end check if email is unique or equal to the current uname of the user
+      } //end check if uname is unique or equal the current uname of the user
     } //end LOOP - check if uname of other users
   } //end checkUname
 
@@ -140,26 +127,32 @@ export class ProfileFormComponent implements OnInit {
         interests.length != 0
       ) {
         this.checkEmail(email);
-        console.log("email is unique");
         this.checkUname(uname);
-        console.log("uname is unique");
         if (this.isUniqueEmail && this.isUniqueUname) {
           //update get previous uname to update author of previous comments
-          this.oldUname.emit(this.loggedUser["uname"]);
-
+          //update comments
           //update profile
-          this.loggedUser["uname"] = uname;
-          this.loggedUser["fname"] = fname;
-          this.loggedUser["mname"] = mname;
-          this.loggedUser["lname"] = lname;
-          this.loggedUser["email"] = email;
-          this.loggedUser["interests"] = interests;
+          this.loggedUser = {
+            id: this.loggedUser["id"],
+            uname: uname,
+            pass: this.loggedUser["pass"],
+            isLoggedIn: this.loggedUser["isLoggedIn"],
+            img: this.loggedUser["img"],
+            fname: fname,
+            mname: mname,
+            lname: lname,
+            email: email,
+            mobile: this.loggedUser["mobile"],
+            bdate: this.loggedUser["bdate"],
+            interests: interests
+          };
 
           this.updatedLoggedUser.emit(this.loggedUser);
+
           this.isSuccess = true;
           window.alert("Your profile was updated successfully");
         } //end if email and uname is valid (unique)
       } //end if fields are not empty
-    }//if chose to edit profile
+    } //if chose to edit profile
   } //end on EditProfile
 }

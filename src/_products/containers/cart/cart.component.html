@@ -5,6 +5,8 @@
   [cart$]="cart$"
   (removedProduct)="removeFromCart($event)"
   (cartTotal)="getTotal($event)"
+  (addQuantity)="addQuantity($event)"
+  (subtractQuantity)="subtractQuantity($event)"
   (checkOut)="checkOut()"
   (quantity)="getQuantity($event)"
   (item)="updateQuantityOfItem($event)"

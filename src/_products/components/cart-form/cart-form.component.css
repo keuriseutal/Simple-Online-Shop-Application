@@ -1,10 +1,9 @@
 /*#region cart details*/
 .cart-details {
   font-family: Noto Sans, sans-serif;
-  position: fixed;
   padding-top: 20px;
   word-wrap: break-word;
-  width: 95%;
+  width: 80%;
 }
 
 #price {
@@ -27,13 +26,17 @@ hr {
 /*#endregion*/
 
 /*#region product table*/
+#quantityBtn{
+  width: 35px;
+  height: 30px;
+}
+
 .glyphicon-remove#remove {
   color: rgb(160, 6, 6);
 }
 
 .glyphicon-info-sign#info {
   color: rgb(4, 99, 51);
-  
 }
 
 .glyphicon-remove#remove:hover {
@@ -66,6 +69,8 @@ table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  text-align: center;
+  font-size: 18px;    
 }
 
 td,
@@ -85,7 +90,7 @@ tr:hover {
 th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: rgb(4, 99, 51);
   color: white;
 }
@@ -95,7 +100,10 @@ th {
 }
 
 #quantity {
+  font-size: 12px;
   height: 30px;
+  width: 60px;
+  vertical-align: middle;
 }
 
 .material-icons.cart:hover {

@@ -1,30 +1,46 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!--logo and name-->
-        <div class="navbar-header">
-            <i class="material-icons md-36 md-light navbar-form navbar-left">
-                shopping_basket
-            </i>
-            <div class="navbar-brand" id="brand">
-                ClickShop
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" id="brand">
+                    <i class="material-icons md-32 md-light">
+                        shopping_basket
+                    </i>
+                    ClickShop
+                </a>
             </div>
-
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="home" routerLink="/login/home">
+                            <span class="glyphicon glyphicon-home"></span>&nbsp;Home
+                        </a> &nbsp; &nbsp;
+                    </li>
+                    <li>
+                        <a routerLink="/login/home/cart" routerLinkActive="active">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Cart
+                        </a> &nbsp; &nbsp;
+                    </li>
+                    <li>
+                        <a routerLink="/login/home/profile" routerLinkActive="active">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;Profile
+                        </a> &nbsp; &nbsp;
+                    </li>
+                    <li>
+                        <a routerLink="/login/home/transactions" routerLinkActive="active">
+                            <span class="glyphicon glyphicon-transfer"></span>&nbsp;Transactions
+                        </a> &nbsp; &nbsp;
+                    </li>
+                    <li>
+                        <a (click)="onLogOut()" routerLinkActive="active">
+                            <span class="glyphicon glyphicon-off"></span>&nbsp;Log Out
+                        </a> &nbsp; &nbsp;
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!--form
-
-        <form class="navbar-form">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search in ClickShop... (not fully working)" #search> &nbsp;
-                <span class="glyphicon glyphicon-search" (click)="onInputSearch(search.value)"></span>
-            </div>
-        </form>
-        -->
-    </div>
-    <div class="col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9">
-        <a routerLink="/login/home" routerLinkActive="active">Home</a> &nbsp;
-        <a routerLink="/login/home/cart" routerLinkActive="active">My Cart</a> &nbsp;
-        <a routerLink="/login/home/profile" routerLinkActive="active">Profile</a> &nbsp;
-        <a routerLink="/login/home/transactions" routerLinkActive="active">Orders</a> &nbsp;
-        <a (click)="onLogOut()" routerLinkActive="active">Logout</a> &nbsp;
-    </div>
-</nav>
+    </nav>

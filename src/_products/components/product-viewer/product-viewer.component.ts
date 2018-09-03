@@ -62,7 +62,7 @@ export class ProductViewerComponent implements OnInit {
   }
   
   onAddComment(comment, product){
-    if(comment.length >= 100){
+    if(comment.length >= 1){
       this.validComment = true;
       this.comment.emit(comment);
       this.viewedProduct.emit(product);
@@ -70,7 +70,7 @@ export class ProductViewerComponent implements OnInit {
 
     }else{
       this.validComment = false;
-      this.msg = "Comment must contain at least 100 characters";
+      this.msg = "Comment must not be empty";
     }
   }
 

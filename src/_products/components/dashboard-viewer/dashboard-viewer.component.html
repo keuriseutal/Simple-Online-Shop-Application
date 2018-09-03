@@ -1,128 +1,144 @@
-<!--#region SIDEBAR-->
-<div class="sidenav">
-  <!--sorting options area-->
-  <div class="col-md-offset-2">
-    <span class="glyphicon glyphicon-sort"></span>&nbsp;
-    <font size=3>
-      <b>Sort</b>
-    </font>
-    <br>
-    <br>
-    <div>
-      <font size=2>
-        <b>Name</b>
-      </font>
-      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" id="sort-button" (click)="onNameAsc()" autofocus>A to Z</button>
-        <button type="button" class="btn btn-default" id="sort-button" (click)="onNameDesc()">Z to A</button>
-      </div>
-      <font size=2>
-        <b>Price</b>
-      </font>
-      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" id="sort-button" (click)="onPriceAsc()">Low to High</button>
-        <button type="button" class="btn btn-default" id="sort-button" (click)="onPriceDesc()">High to Low</button>
-      </div>
-    </div>
-  </div>
-  <hr style="height:1px;border:none;color:rgb(167, 164, 164);background-color:rgb(167, 164, 164);" />
-  <!--filter options area-->
-  <div class="col-md-offset-2">
-    <span class="glyphicon glyphicon-filter"></span>&nbsp;
-    <font size=3>
-      <b>Filter</b>
-    </font>
-    <br>
-    <br> &nbsp;&nbsp;&nbsp;&nbsp;
-    <font size=2>
-      <b>Category</b>
-    </font>
-    <br>
-    <br>
-    <div class="col-md-offset-2">
-      <label class="checkbox-container">Gadget
-        <input type="checkbox" [(ngModel)]="filterByGadget" (change)="onFilter()">
-        <span class="checkbox-checkmark"></span>
-      </label>
-      <label class="checkbox-container">Clothing
-        <input type="checkbox" [(ngModel)]="filterByClothing" (change)="onFilter()">
-        <span class="checkbox-checkmark"></span>
-      </label>
-      <label class="checkbox-container">Music
-        <input type="checkbox" [(ngModel)]="filterByMusic" (change)="onFilter()">
-        <span class="checkbox-checkmark"></span>
-      </label>
-      <label class="checkbox-container">Merchandise
-        <input type="checkbox" [(ngModel)]="filterByMerchandise" (change)="onFilter()">
-        <span class="checkbox-checkmark"></span>
-      </label>
-      <label class="checkbox-container">Appliances
-        <input type="checkbox" [(ngModel)]="filterByAppliances" (change)="onFilter()">
-        <span class="checkbox-checkmark"></span>
-      </label>
-    </div>
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;
-    <font size=2>
-      <b>Price Range</b>
-    </font>
-    <br>
-    <div class="form-group row">
-      <br>
-      <div class=" col-xs-offset-1 col-sm-offset-1  col-md-offset-1  col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        &nbsp;&nbsp;
-        <b>
-          <font size=1>MIN</font>
-        </b>
-        <input type="text" value="filterByMinPrice" class="form-control" id="range" [(ngModel)]="filterByMinPrice" (input)="onFilter()">
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        &nbsp;&nbsp;
-        <b>
-          <font size=1>MAX</font>
-        </b>
-        <input type="text" value="filterByMaxPrice" class="form-control" id="range" [(ngModel)]="filterByMaxPrice" (input)="onFilter()">
-      </div>
-    </div>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <!--#region SIDEBAR-->
+        <div class="sidenav col-xs-4 col-sm-3 col-md-3 col-lg-3">
+          <!--sorting options area-->
+          <div class="col-md-offset-2">
+            <br>
+            <span class="glyphicon glyphicon-sort"></span>&nbsp;
+            <font size=3>
+              <b>Sort</b>
+            </font>
+            <br>
+            <font size=2>
+              <b>Name</b>&nbsp;
+            </font>
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" id="sort-button" (click)="onNameAsc()" autofocus>A to Z</button>
+              <button type="button" class="btn btn-default" id="sort-button" (click)="onNameDesc()">Z to A</button>
+            </div>
+            <br>
+            <font size=2>
+              <b>Price</b>&nbsp;
+            </font>
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" id="sort-button" (click)="onPriceAsc()">Low to High</button>
+              <button type="button" class="btn btn-default" id="sort-button" (click)="onPriceDesc()">High to Low</button>
+            </div>
+          </div>
+          <hr style="height:1px;border:none;color:rgb(167, 164, 164);background-color:rgb(167, 164, 164);" />
+          <!--filter options area-->
+          <div class="col-md-offset-2">
+            <span class="glyphicon glyphicon-filter"></span>&nbsp;
+            <font size=3>
+              <b>Filter</b>
+            </font>
+            <br>
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;
+            <font size=2>
+              <b>Category</b>
+            </font>
+            <br>
+            <br>
+            <label class="checkbox-container">Gadget
+              <input type="checkbox" [(ngModel)]="filterByGadget" (change)="onFilter()">
+              <span class="checkbox-checkmark"></span>
+            </label>
+            <label class="checkbox-container">Clothing
+              <input type="checkbox" [(ngModel)]="filterByClothing" (change)="onFilter()">
+              <span class="checkbox-checkmark"></span>
+            </label>
+            <label class="checkbox-container">Music
+              <input type="checkbox" [(ngModel)]="filterByMusic" (change)="onFilter()">
+              <span class="checkbox-checkmark"></span>
+            </label>
+            <label class="checkbox-container">Merchandise
+              <input type="checkbox" [(ngModel)]="filterByMerchandise" (change)="onFilter()">
+              <span class="checkbox-checkmark"></span>
+            </label>
+            <label class="checkbox-container">Appliances
+              <input type="checkbox" [(ngModel)]="filterByAppliances" (change)="onFilter()">
+              <span class="checkbox-checkmark"></span>
+            </label>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+            <font size=2>
+              <b>Price Range</b>
+            </font>
+            <br>
+            <div class="form-group row col-md-offset-2">
+              <br>
 
+              <b class="pull-left">
+                <font size=1>MIN</font>&nbsp;&nbsp;&nbsp;
+              </b>
+              <input type="text" value="filterByMinPrice" class="form-control" id="range" [(ngModel)]="filterByMinPrice" (input)="onFilter()">
+              <br>
+              <b class="pull-left">
+                <font size=1>MAX</font>&nbsp;&nbsp;&nbsp;
+              </b>
+              <input type="text" value="filterByMaxPrice" class="form-control" id="range" [(ngModel)]="filterByMaxPrice" (input)="onFilter()">
+            </div>
+          </div>
+        </div>
+        <!--#endregion-->
+      </div>
+
+
+      <!--#region CONTENTS-->
+
+      <div class="col-xs-offset-4 col-sm-offset-3 col-md-offset-3 col-lg-offset-3
+                col-xs-8 col-sm-8 col-md-9 col-lg-9">
+        <div *ngIf="(products | async).length == 0">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h1 style="text-align: center">No product(s) available</h1>
+        </div>
+        <div class="panel panel-default col-xs-4 col-sm-4 col-md-4 col-lg-4" *ngFor="let p of (products | async)">
+          <div class="panel-body" (click)="onSelectItem(p)">
+            <img src="{{p.img}}">
+            <br>
+            <hr>
+            <b>{{p.name}}</b>
+            <br>
+            <b id="price">{{p.price | currency:'PHP '}}</b>
+            <br>
+            <i class="pull-right">
+              <font size=1>Category: {{p.category}}</font>
+            </i>
+          </div>
+          <div class=" input-group">
+            <button disabled *ngIf="p.quantity == 1" type="button" class="btn btn-default pull-left" id="quantityBtn">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+            <button disabled *ngIf="p.quantity == p.stock" type="button" class="btn btn-default" id="quantityBtn">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button *ngIf="p.quantity > 1" (click)="subtract(p)" type="button" class="btn btn-default pull-left" id="quantityBtn">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+            <button *ngIf="p.quantity < p.stock" (click)="add(p)" type="button" class="btn btn-default" id="quantityBtn">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <input readonly type="number" [(ngModel)]="p.quantity" value={{p.quantity}} min="1" max={{p.stock}} class="form-control "
+              id="quantity" #quantity> &nbsp;
+            <i class="material-icons cart md-dark md-20 pull-right" data-toggle="tooltip" title="Add To Cart?" (click)="onAddToCart(p, quantity.value)">
+              shopping_cart
+            </i>
+          </div>
+
+        </div>
+      </div>
+      <!--#endregion-->
+    </div>
   </div>
 </div>
-<!--#endregion-->
-
-<!--#region CONTENTS-->
-<div class="main">
-    <div *ngIf="(products | async).length == 0">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 style="text-align: center">No product(s) available</h1>
-      </div>
-  <div class="panel panel-default col-xs-4 col-sm-4 col-md-4 col-lg-4" *ngFor="let p of (products | async)">
-    <div class="panel-body" (click)="onSelectItem(p)">
-      <img src="{{p.img}}">
-      <br>
-      <b>{{p.name}}</b>
-      <br>
-      <b id="price">{{p.price | currency:'PHP '}}</b>
-      <br>
-      <i class="pull-right">
-        <font size=1>Category: {{p.category}}</font>
-      </i>
-    </div>
-    <div class=" input-group pull-right">
-      <input type="number" value="1" min="1" max={{p.stock}} class="form-control " id="range" #quantity> &nbsp;
-      <i class="material-icons cart md-dark md-20" data-toggle="tooltip" title="Add To Cart?" (click)="onAddToCart(p, quantity.value)">
-        shopping_cart
-      </i>
-    </div>
-
-  </div>
-</div>
-
-<!--#endregion-->

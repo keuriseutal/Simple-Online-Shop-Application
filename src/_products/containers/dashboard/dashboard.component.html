@@ -1,8 +1,6 @@
 <navbar-viewer
 (searchInput)="onSearchInput($event)"
 (logOut)="setAsLoggedOut($event)"></navbar-viewer>
-@Output() selectedProduct = new EventEmitter();
-@Output() selectedProductQuantity = new EventEmitter();
 <body>
     <dashboard-viewer *ngIf="!isItemViewed"
     [products]="products$" 
@@ -17,6 +15,8 @@
     (filterAppliances)="byAppliances($event)"
     (filterMinPrice)="byMinPrice($event)"
     (filterMaxPrice)="byMaxPrice($event)"
+    (addQuantity)="addQuantity($event)"
+    (subtractQuantity)="subtractQuantity($event)"
     (selectedProductQuantity)="getSelectedProductQuantity($event)"
     (selectedProduct)="addToCart($event)">
     </dashboard-viewer>
