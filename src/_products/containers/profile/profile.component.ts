@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   comments$: Observable<Comment[]>;
   users$: Observable<User[]>;
   loggedUser: User;
+  users: User[];
   comments: Comment[];
   oldUname: string;
   constructor(
@@ -27,15 +28,17 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-    this.oldUname = this.loggedUser.uname;
-    console.log(this.oldUname);
+    this.oldUname = this.loggedUser["uname"];
     //to compare username and email from other users -- edited username and email must be unique
     this.users$ = this.userStore.select(fromUserStore.getAllUsers);
+    this.userStore.dispatch(new fromUserStore.GetUsers());
+    this.users$.subscribe(u => (this.users = u));
+
     this.comments$ = this.commentStore
-    .select(fromCommentStore.getAllComments)
-    .pipe(map(comments => comments.filter(c => this.oldUname == c.author)));
-  this.commentStore.dispatch(new fromCommentStore.GetComments());
-  
+      .select(fromCommentStore.getAllComments)
+      .pipe(map(comments => comments.filter(c => this.oldUname == c.author)));
+    this.commentStore.dispatch(new fromCommentStore.GetComments());
+    this.comments$.subscribe(c => (this.comments = c));
   }
 
   setAsLoggedOut(event) {
@@ -48,11 +51,13 @@ export class ProfileComponent implements OnInit {
   }
 
   updateUserProfile(event: User) {
+    console.log("comments...." + this.comments);
+
+
     //updateComments
-    this.comments$.subscribe(c => (this.comments = c));
     for (let i = 0; i < this.comments.length; i++) {
       let newComment: Comment = {
-        id:this.comments[i].id,
+        id: this.comments[i].id,
         productId: this.comments[i].productId,
         msg: this.comments[i].msg,
         author: event.uname,
@@ -63,10 +68,9 @@ export class ProfileComponent implements OnInit {
       );
     }
     window.alert("Previous comments were updated successfully");
-    
+
     //update profile
     localStorage.setItem("loggedUser", JSON.stringify(event));
     this.userStore.dispatch(new fromUserStore.UpdateUser(event));
   }
-
 }

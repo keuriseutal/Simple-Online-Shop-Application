@@ -12,11 +12,10 @@ import { Comment } from "../../models/comments.model";
 export class ProfileFormComponent implements OnInit {
   @Input()
   loggedUser: User;
+  
   @Input()
-  comments$: Observable<Comment[]>;
-  @Input()
-  users$: Observable<User[]>;
   users: User[];
+
   @Output()
   updatedLoggedUser = new EventEmitter();
 
@@ -37,7 +36,7 @@ export class ProfileFormComponent implements OnInit {
   constructor(private location: Location) {}
 
   ngOnInit() {
-    this.users$.subscribe(u => (this.users = u));
+
   }
 
   onGoBack() {
@@ -47,6 +46,8 @@ export class ProfileFormComponent implements OnInit {
   //#region checkers
 
   checkEmail(email) {
+    console.log("users...." + this.users);
+
     let emailDomain: string;
     let isCharForDomainExists: boolean; //if @ exists
     //check email contains @

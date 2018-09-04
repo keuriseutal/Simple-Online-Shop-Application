@@ -48,7 +48,7 @@
       "price": 200,
       "category": "Clothing",
       "img": "https://cdn.shopify.com/s/files/1/0419/1525/products/mens-black-leather-president-boot-1_1024x1024.JPG?v=1533933937",
-      "quantity": 9,
+      "quantity": 1,
       "stock": 10,
       "status": "Available",
       "details": "Black Boots... perfect for rainy seasons"
@@ -81,7 +81,7 @@
       "price": 22000,
       "category": "Gadget",
       "img": "https://www.cliftoncameras.co.uk/uploads/variants/M10SilverBody2.png",
-      "quantity": 2,
+      "quantity": 1,
       "stock": 22,
       "status": "Available",
       "details": "This is a camera..."
@@ -92,7 +92,7 @@
       "price": 1500,
       "category": "Merchandise",
       "img": "https://gd.image-gmkt.com/YG-ENTERTAINMENT-BLACKPINK-OFFICIAL-GOODS-BLACKPINK-OFFICIAL-LIGHT-STICK/li/653/515/1133515653.g_400-w_g.jpg",
-      "quantity": 2,
+      "quantity": 1,
       "stock": 15,
       "status": "Available",
       "details": "BLACKPINK OFFICIAL LIGHTSTICK: A PyongBong designed for BLINKS"
@@ -151,21 +151,8 @@
   ],
   "cart": [
     {
-      "id": 15,
-      "total": 44000,
-      "userId": 1,
-      "name": "Camera",
-      "price": 22000,
-      "category": "Gadget",
-      "img": "https://www.cliftoncameras.co.uk/uploads/variants/M10SilverBody2.png",
-      "quantity": 2,
-      "stock": 22,
-      "status": "In Cart",
-      "details": "This is a camera..."
-    },
-    {
       "id": 12,
-      "total": 44200,
+      "total": 3500,
       "userId": 1,
       "name": "Black Boots",
       "price": 200,
@@ -178,20 +165,20 @@
     },
     {
       "id": 16,
-      "total": 47200,
+      "total": 3500,
       "userId": 1,
       "name": "BlackPink Lightstick",
       "price": 1500,
       "category": "Merchandise",
       "img": "https://gd.image-gmkt.com/YG-ENTERTAINMENT-BLACKPINK-OFFICIAL-GOODS-BLACKPINK-OFFICIAL-LIGHT-STICK/li/653/515/1133515653.g_400-w_g.jpg",
-      "quantity": 2,
+      "quantity": 1,
       "stock": 15,
       "status": "In Cart",
       "details": "BLACKPINK OFFICIAL LIGHTSTICK: A PyongBong designed for BLINKS"
     },
     {
       "id": 11,
-      "total": 49000,
+      "total": 3500,
       "userId": 1,
       "name": "RV Lightstick",
       "price": 1800,
